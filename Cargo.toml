@@ -1,0 +1,24 @@
+cargo-features = ["strip"]
+
+[package]
+name = "easy_aes"
+version = "0.1.0"
+authors = ["scarjit"]
+edition = "2018"
+
+[lib]
+crate-type = ["dylib", "rlib"]
+
+[profile.release]
+strip="symbols"
+lto=true
+
+[dependencies]
+aes-gcm-siv = "0.5.0"
+rand = "0.7.3"
+base64 = "0.12.3"
+hex = "0.4.2"
+obfstr = "0.1.1"
+
+[dev-dependencies]
+rand = "0.7.3"
