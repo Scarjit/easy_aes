@@ -42,7 +42,6 @@ mod tests {
     use crate::{decrypt, encrypt};
     use rand::distributions::Alphanumeric;
     use rand::Rng;
-    use rayon::prelude::IntoParallelIterator;
 
     #[test]
     fn it_works() {
