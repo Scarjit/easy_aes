@@ -2,7 +2,7 @@ cargo-features = ["strip"]
 
 [package]
 name = "easy_aes"
-version = "0.1.0"
+version = "1.0.0"
 authors = ["scarjit"]
 edition = "2018"
 

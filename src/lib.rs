@@ -45,8 +45,8 @@ mod tests {
 
     #[test]
     fn it_works() {
-        let mut rng = rand::thread_rng();
-        for i in 0..1024 {
+        let rng = rand::thread_rng();
+        for _i in 0..1024 {
             let tx = rng
                 .sample_iter(&Alphanumeric)
                 .take(1024)
