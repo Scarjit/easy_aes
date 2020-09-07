@@ -7,7 +7,7 @@ authors = ["scarjit"]
 edition = "2018"
 
 [lib]
-crate-type = ["dylib", "rlib"]
+crate-type = ["rlib"]
 
 [profile.release]
 strip="symbols"
