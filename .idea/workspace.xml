@@ -14,7 +14,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e8768d9b-6dd3-4e3e-9674-7008828491c6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,6 +43,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -84,8 +84,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Cargo Command.Test" />
       <item itemvalue="Cargo Command.Build" />
+      <item itemvalue="Cargo Command.Test" />
     </list>
   </component>
   <component name="RustProjectSettings">
@@ -105,6 +105,7 @@
       <workItem from="1598435256488" duration="1238000" />
       <workItem from="1598437736547" duration="1318000" />
       <workItem from="1598519547489" duration="1150000" />
+      <workItem from="1599930008610" duration="132000" />
     </task>
     <servers />
   </component>
