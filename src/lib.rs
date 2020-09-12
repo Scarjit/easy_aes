@@ -6,7 +6,7 @@ use rand::Rng;
 ///Encrypt given data string, returns ciphertext & nounce
 ///Prepends ciphertext with nounce
 pub fn encrypt(plaintext: &str, aes_key: &str) -> String {
-    println!("Encrypting using: {}", aes_key);
+    //println!("Encrypting using: {}", aes_key);
     assert_eq!(aes_key.len(), 32);
     let mut rng = rand::thread_rng();
     let key = GenericArray::from_slice(aes_key.as_bytes());
@@ -24,7 +24,7 @@ pub fn encrypt(plaintext: &str, aes_key: &str) -> String {
 ///Decrypts given ciphertext using key & nounce, returns plaintext
 ///Reads nounce from first 24 chars of ciphertext
 pub fn decrypt(ciphertext: &str, aes_key: &str) -> String {
-    println!("Decrypting using: {}", aes_key);
+    //println!("Decrypting using: {}", aes_key);
     assert_eq!(aes_key.len(), 32);
     let nx = &ciphertext[0..24];
     let datan = &ciphertext[24..];
