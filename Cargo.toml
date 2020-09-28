@@ -2,7 +2,7 @@ cargo-features = ["strip"]
 
 [package]
 name = "easy_aes"
-version = "1.0.1"
+version = "2.0.1"
 authors = ["scarjit"]
 edition = "2018"
 
@@ -14,11 +14,14 @@ strip="symbols"
 lto=true
 
 [dependencies]
-aes-gcm-siv = "0.5.0"
-rand = "0.7.3"
-base64 = "0.12.3"
-hex = "0.4.2"
-obfstr = "0.1.1"
+rand = "0.*"
+base64 = "0.*"
+hex = "0.*"
+obfstr = "0.*"
+
+[dependencies.aes-gcm-siv]
+version = "0.*"
+features = ["std"]
 
 [dev-dependencies]
-rand = "0.7.3"
+rand = "0.*"
