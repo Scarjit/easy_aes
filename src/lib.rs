@@ -41,16 +41,19 @@ mod tests {
     use crate::{decrypt, encrypt};
     use rand::distributions::Alphanumeric;
     use rand::Rng;
+    use std::iter;
 
     #[test]
     fn it_works() {
-        let rng = rand::thread_rng();
+        let mut rng = rand::thread_rng();
         for _i in 0..1024 {
-            let tx = rng
-                .sample_iter(&Alphanumeric)
+            let tx = iter::repeat(())
+                .map(|()| rng.sample(Alphanumeric))
+                .map(char::from)
                 .take(1024)
                 .collect::<String>();
-            let tk = rng.sample_iter(&Alphanumeric).take(32).collect::<String>();
+            let tk = iter::repeat(())
+                .map(|()| rng.sample(Alphanumeric)).map(char::from).take(32).collect::<String>();
             let encrypted = encrypt(&tx, &tk).unwrap();
             let decrypted = decrypt(&encrypted, &tk).unwrap();
             assert_eq!(tx, decrypted);
