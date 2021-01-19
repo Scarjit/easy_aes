@@ -46,7 +46,8 @@ mod tests {
     #[test]
     fn it_works() {
         let mut rng = rand::thread_rng();
-        for _i in 0..1024 {
+        let number_of_tests: u32 = 2u32.pow(14);
+        for _i in 0..number_of_tests {
             let tx = iter::repeat(())
                 .map(|()| rng.sample(Alphanumeric))
                 .map(char::from)
