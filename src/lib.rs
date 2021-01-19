@@ -44,7 +44,7 @@ mod tests {
     use std::iter;
 
     #[test]
-    fn it_works() {
+    fn test_aes() {
         let mut rng = rand::thread_rng();
         for _i in 0..1024 {
             let tx = iter::repeat(())
