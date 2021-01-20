@@ -1,13 +1,13 @@
-use std::error::Error;
-use aes_gcm_siv::aead::Aead;
-use aes_gcm_siv::aead::generic_array::GenericArray;
-use aes_gcm_siv::Aes256GcmSiv;
-use aes_gcm_siv::aead::NewAead;
-use rand::Rng;
 use crate::EasyCryptoAead;
+use aes_gcm_siv::aead::generic_array::GenericArray;
+use aes_gcm_siv::aead::Aead;
+use aes_gcm_siv::aead::NewAead;
+use aes_gcm_siv::Aes256GcmSiv;
+use rand::Rng;
+use std::error::Error;
 
-pub struct EasyAES{}
-impl EasyCryptoAead for EasyAES{
+pub struct EasyAES {}
+impl EasyCryptoAead for EasyAES {
     ///Encrypt given data string, returns ciphertext & nounce
     ///Prepends ciphertext with nounce
     ///Panics if aes key is not 32 chars long
@@ -40,4 +40,3 @@ impl EasyCryptoAead for EasyAES{
         Ok(String::from_utf8(decrypted)?)
     }
 }
-
