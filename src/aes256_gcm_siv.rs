@@ -44,7 +44,6 @@ impl EasyCryptoAead for EasyAES{
 #[cfg(test)]
 mod tests {
     use std::iter;
-
     use rand::distributions::Alphanumeric;
     use rand::Rng;
     use crate::aes256_gcm_siv::EasyAES;
@@ -60,6 +59,7 @@ mod tests {
                 .map(char::from)
                 .take(1024)
                 .collect::<String>();
+            
             let tk = iter::repeat(())
                 .map(|()| rng.sample(Alphanumeric)).map(char::from).take(32).collect::<String>();
 
