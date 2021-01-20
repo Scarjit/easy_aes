@@ -1,12 +1,12 @@
 use crate::EasyCryptoAead;
-use std::error::Error;
-use chacha20poly1305::XChaCha20Poly1305;
-use chacha20poly1305::aead::{NewAead, Aead};
-use rand::Rng;
 use chacha20poly1305::aead::generic_array::GenericArray;
+use chacha20poly1305::aead::{Aead, NewAead};
+use chacha20poly1305::XChaCha20Poly1305;
+use rand::Rng;
+use std::error::Error;
 
-pub struct EasyXChaCha20Poly1305{}
-impl EasyCryptoAead for EasyXChaCha20Poly1305{
+pub struct EasyXChaCha20Poly1305 {}
+impl EasyCryptoAead for EasyXChaCha20Poly1305 {
     ///Encrypt given data string, returns ciphertext & nounce
     ///Prepends ciphertext with nounce
     ///Panics if chacha key is not 32 chars long
