@@ -2,9 +2,9 @@
 mod tests {
     use std::iter;
 
-    use easy_aes::aes256_gcm_siv::EasyAES;
-    use easy_aes::x_chacha20_poly1305::EasyXChaCha20Poly1305;
-    use easy_aes::EasyCryptoAead;
+    use easy_aes::aead::aes256_gcm_siv::EasyAES;
+    use easy_aes::aead::x_chacha20_poly1305::EasyXChaCha20Poly1305;
+    use easy_aes::aead::EasyCryptoAead;
     use rand::distributions::Alphanumeric;
     use rand::Rng;
     use rayon::iter::ParallelIterator;
