@@ -9,6 +9,8 @@ mod tests {
     use rand::Rng;
     use rayon::iter::ParallelIterator;
     use rayon::prelude::{IntoParallelIterator, IntoParallelRefIterator};
+    use easy_aes::custom_aead::salsa20_kangerootwelve::EasySalsa20Kangerootwelve;
+    use easy_aes::custom_aead::EasyCryptoCustomAEAD;
 
     type Key = String;
     type PlainText = String;
@@ -51,6 +53,16 @@ mod tests {
         assert!(tests.par_iter().all(|testcase| {
             let encrypted = EasyXChaCha20Poly1305::encrypt(&testcase.0, &testcase.1).unwrap();
             let decrypted = EasyXChaCha20Poly1305::decrypt(&encrypted, &testcase.1).unwrap();
+            testcase.0 == decrypted
+        }));
+    }
+
+    #[test]
+    fn test_salsa20_kangerootwelve(){
+        let tests = generate_tests();
+        assert!(tests.par_iter().all(|testcase| {
+            let encrypted = EasySalsa20Kangerootwelve::encrypt(&testcase.0, &testcase.1).unwrap();
+            let decrypted = EasySalsa20Kangerootwelve::decrypt(&encrypted, &testcase.1).unwrap();
             testcase.0 == decrypted
         }));
     }
